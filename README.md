@@ -38,8 +38,8 @@ When the program runs, it does the following steps:
             - 4 ⊕ k1, 1 ⊕ k2 |2 ⊕ k3, 3 ⊕ k4
             - 2 ⊕ k5, 3 ⊕ k6 | 4 ⊕ k7, 1 ⊕ k8
     - Take the first 4 bits (the first row) and put them into s0, and the bottom row into s1
-        - S0 = $\begin{bmatrix}1 & 0 & 3 & 2 \\ 3 & 2 & 1 & 0 \\ 0 & 2 & 1 & 3 \\ 3 & 1 & 3 & 2 \end{bmatrix}$
-        - S1 = $\begin{bmatrix}0 & 1 & 2 & 3 \\ 2 & 0 & 1 & 3 \\ 3 & 0 & 1 & 0 \\ 2 & 1 & 0 & 3 \end{bmatrix}$
+        - S0 = [1, 0, 3, 2; 3, 2, 1, 0; 0, 2, 1, 3; 3, 1, 3, 2]
+        - S1 = [0, 1, 2, 3; 2, 0, 1, 3; 3, 0, 1, 0; 2, 1, 0, 3]
         - The 1st and 4th bits of the input (the row of the P matrix) are treated as a 2-bit number and define the row of the S matrix while the 2nd and 3rd bit are used as the column
         - Repeat that for the 2nd row of the P matrix
         - The 4 bits that the 2 numbers grabbed from the S tables are put together like this
