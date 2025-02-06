@@ -1,10 +1,8 @@
 # SimplifiedDES
 
-## Description
-
 A simplified version of DES encryption made for my cyber security class. It uses an input file and a hex key to encrypt the file and output both the output and the log files.
 
-When the program runs, it does the following steps:
+## Explanation of Program
 1. **S-DES key generation**
     - Rearrange the key's input bits to the correct output bits
         - Shows which of the bits from the input go into the 10-bit output
@@ -29,13 +27,13 @@ When the program runs, it does the following steps:
 3. **The Fk function**
     - Take the left and right sides of the 8-bit input separately as 2 inputs of 4 bits
     - From the right side 4 bits, expand and permutate in the following matrix
-        - 4, 1, |2, 3
+        - 4, 1, | 2, 3
         - 2, 3, | 4, 1
     - Take the 8-bit key and do exclusive-or on each of the bits with the 8 bits from the expanded right side in order
-        - 4 xor k1, 1 xor k2 |2 xor k3, 3 xor k4
+        - 4 xor k1, 1 xor k2 | 2 xor k3, 3 xor k4
         - 2 xor k5, 3 xor k6 | 4 xor k7, 1 xor k8
-        - This turns into (⊕ = direct sum)
-            - 4 ⊕ k1, 1 ⊕ k2 |2 ⊕ k3, 3 ⊕ k4
+        - Then direct sum the k values with the starting values (⊕ = direct sum)
+            - 4 ⊕ k1, 1 ⊕ k2 | 2 ⊕ k3, 3 ⊕ k4
             - 2 ⊕ k5, 3 ⊕ k6 | 4 ⊕ k7, 1 ⊕ k8
     - Take the first 4 bits (the first row) and put them into s0, and the bottom row into s1
         - S0 = 
@@ -57,7 +55,8 @@ When the program runs, it does the following steps:
         - The 4 bits that the 2 numbers grabbed from the S tables are put together like this
             - 2, 4, 3, 1
             - 1 and 2 are the two bits from the s0 and 3 and 4 are the two bits from s1
-    - The output of Fk is (left side of the original 8 bits xor the 4 bits from the S tables, original right side of the original 8 bits)
+    - The output of Fk is:
+        - (left side of the original 8 bits xor the 4 bits from the S tables, original right side of the original 8 bits)
         - L xor S, R
         - Full expression is = L xor (s table stuff(R expansion and xor with key)), R
 
